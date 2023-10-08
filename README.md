@@ -1,2 +1,0 @@
-# infinity-atom.github.io
-
