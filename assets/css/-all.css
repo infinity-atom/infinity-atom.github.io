@@ -144,7 +144,7 @@ a.no-line {
     align-items: center;
     padding: 15px;
 
-    height: 50vh;
+    height: 40vh;
     font-size: 2.5em;
     font-weight: bold;
 
@@ -165,8 +165,8 @@ a.no-line {
     justify-content: center;
     align-items: center;
 
-    height: 10vh;
-    font-size: 1.2em;
+    height: 20vh;
+    font-size: 1.6em;
 }
 
 .project-gallery-info {
