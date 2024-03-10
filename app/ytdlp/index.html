@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yt-dlp Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="script.js"></script>
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="background-info">
+        Windows can be moved
+    </div>
+
+    <div class="window win-main">
+        <div class="window-header win-main-header">
+            yt-dlp Generator
+        </div>
+        <div class="window-body">
+            <div class="window-option">
+                Video file or link &nbsp;
+                <select id="win-main-input-linktype" value="single-link">
+                    <optgroup label="Single link will only download one video"></optgroup>
+                    <optgroup label="Video file will download all videos in a txt file"></optgroup>
+                    <option value="single-link">Single link</option>
+                    <option value="file-link">Video file</option>
+                </select>
+            </div>
+            <div class="window-option">
+                Video link or file name &nbsp;
+                <input class="input-long" type="text" id="win-main-input-videolink">
+            </div>
+
+            <h3>Options</h3>
+
+            <div class="window-option">
+                Enable verbose &nbsp;
+                <input type="checkbox" id="win-main-input-verbose">
+            </div>
+            <div class="window-option">
+                Print HTTP traffic &nbsp;
+                <input type="checkbox" id="win-main-input-printhttp">
+            </div>
+
+            <h3>Options using ffmpeg</h3>
+
+            <div class="window-option">
+                <em>
+                    All options under the "options using ffmeg" title require the ffmpeg library.<br>
+                    Include the ffmpeg executable (renamed to ffmpeg, example ffmpeg.exe)<br>
+                    in the same directory as yt-dlp, or install it with apt, etc.
+                </em>
+            </div>
+            <div class="window-option">
+                <button id="win-main-button-remux">Remux options</button>
+            </div>
+            <div class="window-option">
+                <button id="win-main-button-extractaudio">Extract audio options</button>
+            </div>
+
+            <h3>Generate command</h3>
+            <div class="window-option">
+                <button id="win-main-button-submit">Generate yt-dlp command</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="window win-remuxopt">
+        <div class="window-header win-remuxopt-header">
+            Remux Options
+        </div>
+        <div class="window-body">
+            <div class="window-option">
+                Remux this video to a different format &nbsp;
+                <input type="checkbox" id="win-remuxopt-input-enable">
+            </div>
+            <div class="window-option">
+                Format &nbsp;
+                <select id="win-remuxopt-input-format" value="avi">
+                    <option value="avi">AVI</option>
+                    <option value="flv">FLV</option>
+                    <option value="gif">GIF</option>
+                    <option value="mkv">MKV</option>
+                    <option value="mov">MOV</option>
+                    <option value="mp4">MP4</option>
+                    <option value="webm">WEBM</option>
+                    <option value="aac">AAC</option>
+                    <option value="aiff">AIFF</option>
+                    <option value="alac">ALAC</option>
+                    <option value="flac">FLAC</option>
+                    <option value="m4a">M4A</option>
+                    <option value="mka">MKA</option>
+                    <option value="mp3">MP3</option>
+                    <option value="ogg">OGG</option>
+                    <option value="opus">OPUS</option>
+                    <option value="vorbis">VORBIS</option>
+                    <option value="wav">WAV</option>
+                </select>
+            </div>
+            <div class="window-option">
+                <button id="win-remuxopt-button-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="window win-extractopt">
+        <div class="window-header win-extractopt-header">
+            Extract Audio Options
+        </div>
+        <div class="window-body">
+            <div class="window-option">
+                Extract audio from the video to a different format &nbsp;
+                <input type="checkbox" id="win-extractopt-input-enable">
+            </div>
+            <div class="window-option">
+                Format &nbsp;
+                <select id="win-extractopt-input-format" value="best">
+                    <option value="best">Best audio format</option>
+                    <option value="aac">AAC</option>
+                    <option value="alac">ALAC</option>
+                    <option value="flac">FLAC</option>
+                    <option value="m4a">M4A</option>
+                    <option value="mp3">MP3</option>
+                    <option value="opus">OPUS</option>
+                    <option value="vorbis">VORBIS</option>
+                    <option value="wav">WAV</option>
+                </select>
+            </div>
+            <div class="window-option">
+                <button id="win-extractopt-button-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="window win-ffmpegwarn">
+        <div class="window-header win-ffmpegwarn-header">
+            Warning
+        </div>
+        <div class="window-body">
+            <div class="window-option">
+                The selected options require you to have ffmpeg installed, and yt-dlp<br>
+                will output an error if ffmpeg is not found.
+            </div>
+            <div class="window-option">
+                <button id="win-ffmpegwarn-button-ok">OK</button> &nbsp;
+                <button id="win-ffmpegwarn-button-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="window win-output">
+        <div class="window-header win-output-header">
+            Generated command
+        </div>
+        <div class="window-body">
+            <div class="window-option">
+                <input class="input-long" type="text" id="win-output-input-gen" readonly>
+            </div>
+            <div class="window-option">
+                <button id="win-output-button-close">Close</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body,html {
+    height: 100%;
+    overflow: hidden;
+}
+
+.background-info {
+    position: absolute;
+    font-size: 80pt;
+    font-weight: bold;
+    
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    text-align: center;
+    color: rgb(236, 236, 236);
+    user-select: none;
+}
+
+.window {
+    width: fit-content;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.window-header {
+    background-color: rgb(216, 216, 216);
+    padding: 5px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    user-select: none;
+    width: 100%;
+    font-weight: bold;
+    box-sizing: border-box;
+    cursor: move;
+
+    border-top: 1px solid rgb(174, 174, 174);
+    border-left: 1px solid rgb(174, 174, 174);
+    border-right: 1px solid rgb(174, 174, 174);
+}
+
+.window-body {
+    background-color: rgb(240, 240, 240);
+    width: fit-content;
+    padding: 5px;
+    font-size: 9pt;
+    box-sizing: border-box;
+
+    border-bottom: 1px solid rgb(174, 174, 174);
+    border-left: 1px solid rgb(174, 174, 174);
+    border-right: 1px solid rgb(174, 174, 174);
+}
+
+.window-option {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.input-long {
+    width: 300px;
+}
+
+h3 {
+    margin: 0;
+}
+
+.win-ffmpegwarn, .win-remuxopt, .win-extractopt, .win-output {
+    display: none;
+}

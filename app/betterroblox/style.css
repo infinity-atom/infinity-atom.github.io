@@ -1,0 +1,25 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ban-main {
+    background-color: rgb(18, 18, 18);
+    color: white;
+    width: 60%;
+    height: 80%;
+    padding: 10px;
+}
+
+.ban-title {
+    font-size: 16pt;
+}
+
+.ban-tabInfo {
+    display: none;
+}

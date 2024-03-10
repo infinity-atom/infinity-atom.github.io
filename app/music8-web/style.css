@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.two-sides {
+    display: flex;
+}
+
+.side-left {
+    width: 70%;
+    border-right: 1px solid black;
+}
+
+.side-right {
+    width: 30%;
+    padding: 10px;
+}
+
+td {
+    border: 1px solid black;
+    padding: 3px;
+    text-align: center;
+}
+
+* { border-collapse: collapse; }

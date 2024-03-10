@@ -7,7 +7,7 @@ body {
 * {
     scrollbar-width: thin;
     scrollbar-color: #777777 #2D2F30;
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
 }
 
 *::-webkit-scrollbar {
@@ -274,4 +274,26 @@ a.no-line {
 
 .socials-social-link > a {
     color: white;
+}
+
+.apps-main {
+    background-color: rgb(47, 47, 47);
+    padding: 15px;
+}
+
+.apps-app {
+    background-color: rgb(64, 64, 64);
+    padding: 15px;
+
+    border-radius: 15px;
+    border: 1px solid white;
+
+    color: white;
+    font-size: 24pt;
+    font-weight: 600;
+}
+
+.apps-app > a {
+    color: white;
+    text-decoration: none;
 }
