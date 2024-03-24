@@ -1,0 +1,33 @@
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+}
+
+.back-button {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.nav-bar {
+    display: flex;
+    border-bottom: 1px solid white;
+    align-items: center;
+}
+
+.station-name {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.content {
+    padding: 8px;
+}
