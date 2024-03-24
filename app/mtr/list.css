@@ -1,0 +1,46 @@
+li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+ul {
+    padding: 0;
+}
+
+ul, li, b-station, h2 {
+    text-align: center;
+}
+
+.nav-bar {
+    display: flex;
+    border-bottom: 1px solid white;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: rgba(51, 51, 51, 0.8);
+}
+
+.title-label {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.search-txt {
+    background-color: #171717;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    margin: 10px;
+    border: 0;
+    width: 40vw;
+    max-width: 500px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+body {
+    margin: 0;
+}

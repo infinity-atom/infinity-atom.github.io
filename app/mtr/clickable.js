@@ -46,3 +46,22 @@ const trainData = {
 document.querySelectorAll("b-train").forEach((train) => {
     train.textContent = trainData[train.getAttribute("data-type")];
 });
+
+function searchUpdate() {
+
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.querySelector(".search-txt");
+    filter = input.value.toUpperCase();
+    ul = document.querySelector(".searchul");
+    li = ul.querySelectorAll("li");
+
+    for (i = 0; i < li.length; i++) {
+        a = li[i].querySelector("b-station");
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].classList.remove("hidden");
+        } else {
+            li[i].classList.add("hidden");
+        }
+    }
+}

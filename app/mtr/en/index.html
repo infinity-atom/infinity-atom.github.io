@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTR</title>
-    <script src="clickable.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="list.css">
+    <script src="../clickable.js" defer></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../list.css">
 </head>
 <body>
-    <div>
-        <span>English</span><span>&nbsp;|&nbsp;</span><a href="../hk">中文</a>
+    <div class="nav-bar">
+        <div class="title-label">Stations</div>
+        <input type="text" placeholder="Search station" class="search-txt" onkeyup="searchUpdate();">
     </div>
-    <h2>Stations</h2>
-    <ul>
+    <ul class="searchul">
         <li>
             <b-station data-station-code="ADM" style="background-color: #0060c0; color:white">ADM <b>Admiralty</b></b-station>
         </li>
