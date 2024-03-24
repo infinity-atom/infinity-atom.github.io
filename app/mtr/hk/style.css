@@ -1,0 +1,35 @@
+body {
+    font-family: sans-serif;
+    background-color: rgb(26, 26, 26);
+    color: rgb(255, 255, 255);
+}
+
+b-station {
+    border-radius: 3px;
+    padding: 3px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 3px;
+    
+    border-radius: 100px;
+    min-width: 250px;
+}
+
+b-line {
+    border-radius: 3px;
+    padding: 3px;
+    display: inline-block;
+    margin: 3px;
+}
+
+b-train {
+    border-radius: 3px;
+    border: 2px solid white;
+    padding: 3px;
+    display: inline-block;
+    margin: 3px;
+}
+
+a {
+    color: white;
+}
